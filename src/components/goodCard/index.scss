@@ -1,0 +1,49 @@
+.good-card {
+  border: 1px solid #000;
+  width: 150px;
+  padding: 10px;
+
+  .good-card__picture {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    display: block;
+  }
+
+  .good-card__name {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    height: 30px;
+  }
+  .good-card__description {
+    font-size: 12px;
+    position: relative;
+    color: #bebebe;
+    text-align: justify;
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    .good-card__price {
+      color: #bebebe;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    &:before {
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 25px;
+      position: absolute;
+      display: block;
+      background: linear-gradient(to bottom, transparent 10%, #fff);
+    }
+  }
+}
+
+.green-border {
+  border-color: #0a0;
+}

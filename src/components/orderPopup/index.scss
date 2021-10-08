@@ -1,0 +1,33 @@
+.overlay {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .order-popup__wrapper {
+    background-color: #fff;
+    padding: 20px;
+
+    .order-popup__buttons {
+      display: flex;
+      justify-content: center;
+
+      .order-popup__button {
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

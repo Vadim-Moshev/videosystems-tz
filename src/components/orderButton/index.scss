@@ -1,0 +1,12 @@
+.order-button {
+  background-color: gold;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+  border: 1px solid #000;
+
+  &:disabled {
+    background-color: silver;
+    cursor: not-allowed;
+  }
+}

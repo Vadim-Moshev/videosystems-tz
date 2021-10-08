@@ -1,0 +1,19 @@
+.menu {
+  display: flex;
+  padding: 7px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #000;
+
+  .menu__item {
+    text-decoration: none;
+    margin-right: 20px;
+  }
+
+  .menu__item:hover {
+    color: orange;
+  }
+
+  .menu__item:last-child {
+    margin-right: 0;
+  }
+}

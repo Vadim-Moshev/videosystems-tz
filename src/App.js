@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "mobx-react";
+import { createBrowserHistory } from "history";
+import { syncHistoryWithStore } from "mobx-react-router";
+import { Switch, Router, Route } from "react-router-dom";
+
+import stores from "./stores/index";
+import routing from "./stores/routing";
+
+import Menu from "./components/menu";
+
+import Shop from "./pages/shop";
+import Cart from "./pages/cart";
+
+import "./App.css";
+
+const browserHistory = createBrowserHistory();
+const history = syncHistoryWithStore(browserHistory, routing);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider {...stores}>
+      <Router history={history}>
+        <div className="wrapper">
+          <Menu />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return <Shop />;
+              }}
+            />
+
+            <Route
+              exact
+              path="/shop"
+              render={() => {
+                return <Shop />;
+              }}
+            />
+
+            <Route
+              exact
+              path="/cart"
+              render={() => {
+                return <Cart />;
+              }}
+            />
+          </Switch>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
